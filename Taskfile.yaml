@@ -1,5 +1,17 @@
 version: "3"
 
+vars:
+  MODEL: gemma3:1b
+
 tasks:
   default:
     cmd: task -a
+
+  local:ollama:serve:
+    cmd: ollama serve
+
+  local:ollama:model:pull:
+    cmd: ollama pull {{.MODEL}}
+
+  local:ollama:model:run:
+    cmd: ollama run {{.MODEL}}
