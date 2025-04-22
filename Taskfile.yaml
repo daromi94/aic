@@ -7,6 +7,15 @@ tasks:
   default:
     cmd: task -a
 
+  fmt:
+    cmds:
+      - isort .
+      - black .
+
+  run:
+    dir: src/core
+    cmd: uv run main.py
+
   local:ollama:serve:
     cmd: ollama serve
 
